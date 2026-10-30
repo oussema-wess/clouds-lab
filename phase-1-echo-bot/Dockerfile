@@ -10,7 +10,7 @@
 FROM python:3.11-slim AS builder
 WORKDIR /app
 COPY requirements.txt .
-# TODO: install the requirements into the prefix /install so stage 2 can copy them.
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
 #       Hint: pip install --no-cache-dir --prefix=/install -r requirements.txt
 
 # ---- Stage 2: runtime ----
@@ -21,5 +21,5 @@ COPY --from=builder /install /usr/local
 COPY app.py .
 ENV PORT=8080
 EXPOSE 8080
-# TODO: set the CMD to launch gunicorn, binding 0.0.0.0:8080 and serving "app:app". Use 1 worker and 8 threads.
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "--threads", "8", "app:app"]
 #       Use the JSON/exec form: CMD ["gunicorn", "--bind", "0.0.0.0:8080", ...]
