@@ -1,0 +1,30 @@
+{
+  "phase": "2",
+  "environment": {
+    "colab": true
+  },
+  "attention": {
+    "naive_ms": 226.894,
+    "vectorized_ms": 1.197,
+    "speedup": 189.55
+  },
+  "threads": {
+    "1": 2248.308,
+    "2": 2013.857,
+    "4": 2427.869,
+    "8": 2553.322
+  },
+  "devices": {
+    "cpu_ms": 429373.6,
+    "gpu_ms": 13365.0
+  },
+  "training": {
+    "steps": 2000,
+    "final_loss": 1.435,
+    "param_count": 4935680
+  },
+  "sample": "\nThis you Cydins:' Pursued yield a with say,\nI banest have but good.\n\nFROHBHOH:\n'Twas' mide, seed any fooc Silfial your ride\nIn jead ignainst to knay.\nWhy\ufffd not; look I counterfed Edward's usup,\nLordear",
+  "model": {
+    "gcs_url": "https://storage.googleapis.com/project-1997faf4-800a-41f5-ad7-eurecomgpt/model.safetensors"
+  }
+}
